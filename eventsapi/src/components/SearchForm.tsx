@@ -2,6 +2,9 @@ import { useState } from "react";
 import { GetEvents } from "../services/EventsServices";
 import { Header } from "./Header";
 
+import { Event } from "../model/Events";
+
+
 export function SearchForm() {
     const [events, setEvents] = useState<Event[]>([])
     const [startDate, setStartDate] = useState<string>('');
@@ -55,6 +58,7 @@ export function SearchForm() {
                         {event.name}
                     </div>
                 ))}
+
         </div>
         
     )
