@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { GetEvents } from "../services/EventsServices";
 import { Header } from "./Header";
+
 import { Event } from "../model/Events";
+
 
 export function SearchForm() {
     const [events, setEvents] = useState<Event[]>([])
@@ -50,6 +52,15 @@ export function SearchForm() {
                     <input className="submit" type="submit" value="Submit" onClick={(event) => onSubmit(event)} />
             </form>
 
+            {events.map((event:any) => (
+                    /* @ts-ignore */
+                    <div key = {event.id}>
+                        {event.name}
+                    </div>
+                ))}
+
         </div>
+        
     )
 }
+
