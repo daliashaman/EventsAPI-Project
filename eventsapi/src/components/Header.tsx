@@ -1,10 +1,10 @@
-// import { Nav, NavItem, NavLink } from "reactstrap";
+import { Nav, NavItem, NavLink } from "reactstrap";
 
 export function Header () {
     return (
         <div className="Header">
             <h1>Events Finder</h1>
-            {/* <Nav>
+            <Nav>
             <NavItem>
                 <NavLink active href="#">
                     Search
@@ -15,7 +15,7 @@ export function Header () {
                     Bucket List
                 </NavLink>
             </NavItem>
-            </Nav> */}
+            </Nav>
         </div>
     )
 }
