@@ -18,13 +18,13 @@ const EventContextProvider = ({children}: IEventContextProviderProps) => {
     }
   
     //idk why i'm having issues with this!
-    return (
-        <EventContext.Provider value={{
-            event: events,
-            addEvent: addEvent,
-            removeEvent: removeEvent
-        }}>{children}</EventContext.Provider>;
-    )
+//     return (
+//         <EventContext.Provider value={{
+//             event: events,
+//             addEvent: addEvent,
+//             removeEvent: removeEvent
+//         }}>{children}</EventContext.Provider>;
+//     )
 };
 
 export default EventContextProvider

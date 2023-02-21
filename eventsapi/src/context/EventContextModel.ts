@@ -1,4 +1,4 @@
-import { Event } from "../model/Events";
+import { AnEvent } from "../model/Events";
 
 export interface EventContextModel  {
     event: Event[],

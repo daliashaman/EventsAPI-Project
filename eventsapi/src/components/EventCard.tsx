@@ -11,10 +11,10 @@ export function EventCard(props: IEventCardProps){
         <div className="EventCard">
 
             <div>
-                {card.images.map((img, index)=> (<img src="{img}"></img>))}
+               <img src= {card.images[0].url} alt="" />
             </div>
             <div>
-              {card.name};  
+              {card.name};
             </div>
             <div>
               {card.locale};  

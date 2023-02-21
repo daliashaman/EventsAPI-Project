@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GetEvents } from "../services/EventsServices";
+import { GetAllEvents } from "../services/EventsServices";
 import { Header } from "./Header";
 import { AnEvent } from "../model/Events";
 
@@ -18,7 +18,7 @@ export function SearchForm(props: ISearchFormProps) {
     const onSubmit = (event:any) => {
         event.preventDefault();
         console.log(startDate);
-        GetEvents({startDate,endDate,postalCode,keyword}).then((events) => {
+        GetAllEvents(keyword, postalCode).then((events) => {
             //lifting up state
             props.EventList(events)
             console.log(events);
