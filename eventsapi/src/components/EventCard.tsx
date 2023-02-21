@@ -5,27 +5,29 @@ interface IEventCardProps {
 }
 
 export function EventCard(props: IEventCardProps){
+    let { Eventcard } = props;
 
     return (
         <div className="EventCard">
 
             <div>
-                {props.Eventcard.images.map((img, index)=> (<img src="{img}"></img>))}
+                {Eventcard.images.map((img, index)=> (<img src="{img}"></img>))}
             </div>
             <div>
-              {props.Eventcard.name};  
+              {Eventcard.name};  
             </div>
             <div>
-              {props.Eventcard.locale};  
+              {Eventcard.locale};  
             </div>
             <div>
-              {props.Eventcard.url};  
+              {Eventcard.url};  
             </div>
             <div>
-                {props.Eventcard.dates.start.localDate};
+                {Eventcard.dates.start.localDate};
             </div>
 
         </div>
     )
 }
 
+export default EventCard;

@@ -11,3 +11,9 @@ export function GetEvents(reqData:{startDate:string,endDate:string,keyword:strin
     .then((response:any) => response.data._embedded.events);
 }
 
+export function GetAllEvents() {
+
+    return axios.get<Event[]>(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=MlsyU0dIeOhOWoaOEVqX3xT9QKxuvX40&size=10`)
+
+    .then((response:any) => response.data._embedded.events);
+}
