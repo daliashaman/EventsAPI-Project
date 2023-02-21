@@ -1,29 +1,15 @@
 import { createContext, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, CardBody, CardDeck, CardLink, CardSubtitle, CardText, CardTitle, Col, Row } from "reactstrap";
-import { GetEventsData, Event } from "../model/Events";
+import EventContext from "../context/EventContext";
+import { GetEventsData, AnEvent } from "../model/Events";
 
-
-interface EventContextModel  {
-    event: Event[],
-    addEvent: (event:Event) => void,
-    removeEvent: (id: string) => void
-}
-
-const defaultValue:EventContextModel = {
-    event: [],
-    addEvent: () => {},
-    removeEvent: () => {}
-}
-
-const EventContext = createContext(defaultValue)
-
-export function BucketListRoute() {
+export function BucketList() {
     const { event } = useContext(EventContext);
     const { removeEvent } = useContext(EventContext);
 
     return (
-        <div className="BucketListRoute">
+        <div className="BucketList">
           <Row>
             {(event || [])?.map((event, index) => (
               <Col lg="4" key={`${event.name}_${index}`}>

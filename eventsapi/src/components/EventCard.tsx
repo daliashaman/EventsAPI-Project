@@ -1,29 +1,29 @@
-import { Event } from "../model/Events";
+import { AnEvent } from "../model/Events";
 
 interface IEventCardProps {
-    Eventcard: Event
+    card: AnEvent
 }
 
 export function EventCard(props: IEventCardProps){
-    let { Eventcard } = props;
+    let { card } = props;
 
     return (
         <div className="EventCard">
 
             <div>
-                {Eventcard.images.map((img, index)=> (<img src="{img}"></img>))}
+                {card.images.map((img, index)=> (<img src="{img}"></img>))}
             </div>
             <div>
-              {Eventcard.name};  
+              {card.name};  
             </div>
             <div>
-              {Eventcard.locale};  
+              {card.locale};  
             </div>
             <div>
-              {Eventcard.url};  
+              {card.url};  
             </div>
             <div>
-                {Eventcard.dates.start.localDate};
+                {card.dates.start.localDate};
             </div>
 
         </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GetEvents } from "../services/EventsServices";
 import { Header } from "./Header";
-import { Event } from "../model/Events";
+import { AnEvent } from "../model/Events";
 
 interface ISearchFormProps {
     EventList: Function;
@@ -9,7 +9,7 @@ interface ISearchFormProps {
 //this is a function - the parent
 
 export function SearchForm(props: ISearchFormProps) {
-    const [events, setEvents] = useState<Event[]>([])
+    const [events, setEvents] = useState<AnEvent[]>([])
     const [startDate, setStartDate] = useState<string>('');
     const [endDate, setEndDate] = useState<string>('');
     const [postalCode, setPostalCode] = useState<string>('');

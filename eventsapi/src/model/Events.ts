@@ -7,10 +7,10 @@ export interface GetEventsData {
 }
 
 export interface EventsEmbedded {
-    events: Event[];
+    events: AnEvent[];
 }
 
-export interface Event {
+export interface AnEvent {
     name:            string;
     type:            string;
     id:              string;

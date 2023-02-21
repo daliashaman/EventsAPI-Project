@@ -23,13 +23,13 @@ export function EventList() {
     }
 
     return (
-        <div className='EventsList'>
+        <div className='EventList'>
         <SearchForm EventList={filterEvents}/>
         <Row>
            { events?._embedded?.events?.length ?
            events?._embedded?.events?.map((affair, index) => (
       <Col lg="4" key={index}>
-        {/* <EventCard key={Eventcard.id} Eventcard={Eventcard} /> */}
+        <EventCard key={card.id} card={ card} />
       </Col>
       )) || ""
     : <Col tag="h1">No events found for your search terms, please try again</Col>
