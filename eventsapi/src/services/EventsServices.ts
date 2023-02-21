@@ -10,3 +10,4 @@ export function GetEvents(reqData:{startDate:string,endDate:string,keyword:strin
 
     .then((response:any) => response.data._embedded.events);
 }
+

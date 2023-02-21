@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { GetEvents } from "../services/EventsServices";
 import { Header } from "./Header";
-
 import { Event } from "../model/Events";
 
+interface ISearchFormProps {
+    EventList: Function;
+}
+//this is a function - the parent
 
-export function SearchForm() {
+export function SearchForm(props: ISearchFormProps) {
     const [events, setEvents] = useState<Event[]>([])
     const [startDate, setStartDate] = useState<string>('');
     const [endDate, setEndDate] = useState<string>('');
@@ -16,7 +19,8 @@ export function SearchForm() {
         event.preventDefault();
         console.log(startDate);
         GetEvents({startDate,endDate,postalCode,keyword}).then((events) => {
-            setEvents(events);
+            //lifting up state
+            props.EventList(events)
             console.log(events);
         })
     }
@@ -24,7 +28,7 @@ export function SearchForm() {
     return (
         <div className="Homepage">
             <Header />
-            <form className="form-container">
+            <form className="form-container" onSubmit={onSubmit}>
                  <label>
                      Keyword:    
                  <input type="text" name="keyword" placeholder="Enter event name" value={keyword}
