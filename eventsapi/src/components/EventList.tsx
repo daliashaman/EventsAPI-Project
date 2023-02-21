@@ -7,13 +7,6 @@ export function EventList() {
 
     const [events, setEvents] = useState<Event[]>([])
 
-    const onSubmit = (event:any) => {
-        event.preventDefault();
-        GetEvents(reqData:{startDate:string,endDate:string,keyword:string,postalCode:string}).then((events) => {
-            setEvents(events);
-            console.log(events);
-        })
-    }
 
     // useEffect(() => {
     //     GetEvents().then(data => setEvents(data));
