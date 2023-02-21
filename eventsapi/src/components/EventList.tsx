@@ -6,8 +6,6 @@ export function EventList() {
 
     const [events, setEvents] = useState<Event[]>([])
 
-
-    
     return (
         <div className="EventList">
          {events.map((event:any) => (
