@@ -1,5 +1,4 @@
-export function EventCard() {
-
+export function EventCard(){
     return (
         <div className="">
             
