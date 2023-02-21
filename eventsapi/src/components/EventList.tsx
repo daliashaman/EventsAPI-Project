@@ -9,7 +9,7 @@ export function EventList() {
 
     const onSubmit = (event:any) => {
         event.preventDefault();
-        GetEvents({events}).then((events) => {
+        GetEvents(reqData:{startDate:string,endDate:string,keyword:string,postalCode:string}).then((events) => {
             setEvents(events);
             console.log(events);
         })
