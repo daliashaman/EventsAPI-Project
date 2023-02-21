@@ -11,5 +11,6 @@ function App() {
       <SearchForm />
     </div>
   );
-
+  }
+  
 export default App;
