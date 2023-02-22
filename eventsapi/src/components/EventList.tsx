@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Col, Row } from "reactstrap";
-import { AnEvent, EventsEmbedded, GetEventsData } from "../model/Events";
+import { AnEvent } from "../model/Events";
 import { GetAllEvents } from "../services/EventsServices";
 import { EventCard } from "./EventCard";
 import { SearchForm } from "./SearchForm";

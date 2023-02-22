@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Row, Col, Button, Card } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 import EventContext from "../context/EventContext";
 import EventCard from "./EventCard";
 
@@ -22,7 +22,7 @@ export function BucketListRoute() {
                         </Button>
                     </Col></>
                 )) || ""
-                : <Col tag="h1">No events found for your search terms, please try again</Col>
+                : <Col tag="h1">No events found.</Col>
                 }
             </Row>
 

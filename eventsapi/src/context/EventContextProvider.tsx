@@ -27,6 +27,6 @@ const EventContextProvider = ({children}: IEventContextProviderProps) => {
 };
 
 
-export default EventContextProvider
+export default EventContextProvider;
 
 

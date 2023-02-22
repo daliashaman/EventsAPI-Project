@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { GetAllEvents } from "../services/EventsServices";
-import { Header } from "./Header";
 import { AnEvent } from "../model/Events";
 
 interface ISearchFormProps {
