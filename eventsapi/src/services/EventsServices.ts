@@ -17,3 +17,12 @@ export function GetAllEvents(keyword?: string, postalCode?: string, startEndDate
 
     .then((response:any) => response.data._embedded.events);
 }
+
+export function GetEventData(): Promise<AnEvent> {
+    return axios
+      .get<AnEvent>(
+        "https://app.ticketmaster.com/discovery/v2/events.json?size=6&apikey=LG8mjVMbvHfPJKBLUIbBnzPxZ3V2q8ru"
+      )
+      .then((response) => response.data);
+  }
+  
