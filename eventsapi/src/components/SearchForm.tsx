@@ -9,15 +9,14 @@ interface ISearchFormProps {
 //this is a function - the parent
 
 export function SearchForm(props: ISearchFormProps) {
-    const [events, setEvents] = useState<AnEvent[]>([])
-    const [startDate, setStartDate] = useState<string>('');
-    const [endDate, setEndDate] = useState<string>('');
+    const [events] = useState<AnEvent[]>([])
+    const [startEndDateTime, setStartEndDateTime] = useState<string>('');
     const [postalCode, setPostalCode] = useState<string>('');
     const [keyword, setKeyword] = useState<string>('');
 
     const onSubmit = (event:any) => {
         event.preventDefault();
-        console.log(startDate);
+        console.log(startEndDateTime);
         GetAllEvents(keyword, postalCode).then((events) => {
             //lifting up state
             props.EventList(events)
@@ -43,17 +42,12 @@ export function SearchForm(props: ISearchFormProps) {
                 </label>
                   
                 <label>
-                     Start Date:
-                 <input type="date" name="startDate" value={startDate}
-                onChange={(e) => setStartDate(e.target.value)} />
+                     Date:
+                 <input type="date" name="startDate" value={startEndDateTime}
+                onChange={(e) => setStartEndDateTime(e.target.value)} />
                 </label>
                   
-                    <label>
-                     End Date:
-                 <input type="date" name="endDate" value={endDate}
-                onChange={(e) => setEndDate(e.target.value)} />
-                </label>
-                    <input className="submit" type="submit" value="Submit" onClick={(event) => onSubmit(event)} />
+                    <button className="submit" type="submit" value="Submit" onClick={(event) => onSubmit(event)}>Submit</button>
             </form>
 
             {events.map((event:any) => (

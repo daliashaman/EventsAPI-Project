@@ -43,7 +43,7 @@ border-style: outset;
 border-color: #0066A2;
 height: 50px;
 width: 100px;
-font: bold15px arial,sans-serif;
+font: bold 15px arial,sans-serif;
 text-shadow: none;
   border-radius: 5px;
 }
@@ -57,4 +57,11 @@ text-shadow: none;
   background-color: green;
 }
 
-
+.EventCard {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+  justify-content: center;
+}
