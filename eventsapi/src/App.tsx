@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Navigate } from "react-router-dom";
 import EventContextProvider from './context/EventContextProvider';
 import { BucketListRoute } from "./components/BucketListRoute";
+import { EventDetails } from "./components/EventDetails";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/eventlist" element={<EventList />} />
               <Route path="/bucketlist" element={<BucketListRoute />} />
+              <Route path="/eventdetails/:id" element={<EventDetails />} />
             </Routes>
           </EventContextProvider>
         </div>

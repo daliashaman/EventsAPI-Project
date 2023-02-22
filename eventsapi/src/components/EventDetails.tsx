@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardLink, CardText, Row, Col } from 'reactstrap';
 import { useParams } from 'react-router-dom';
-import { GetAllEvents} from '../services/EventsServices';
+import {GetEventById} from '../services/EventsServices';
 import {AnEvent} from "../model/Events";
 
 export function EventDetails () {
@@ -11,7 +11,7 @@ export function EventDetails () {
 
   useEffect(() => {
     async function fetchEvent() {
-      const response = await GetAllEvents(id ?? "");
+      const response = await GetEventById(id ?? "");
       setDetailsRoute(response.data)
     
     }
@@ -24,13 +24,13 @@ export function EventDetails () {
     <div className="DetailsRoute">
       {detailsRoute !==null ? (
         <Row>
-          <Col lg="4">
+          <Col>
                 <Card>
                 {detailsRoute.images[0] && (
                   <img
                     src={detailsRoute.images[0].url}
                     alt="Event"
-                    style={{ height: "300px", width: "200px" }}
+                    style={{ height: "300px", width: "50vw" }}
                   />
                 )}
                 <CardBody>

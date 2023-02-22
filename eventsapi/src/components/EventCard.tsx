@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "reactstrap";
 import EventContext from "../context/EventContext";
 import { AnEvent } from "../model/Events";
+import starfillsvg from "../../src/assets/starfill.svg"
+import staremptysvg from "../../src/assets/starempty.svg"
 
 interface IEventCardProps {
     card: AnEvent
@@ -10,7 +12,34 @@ interface IEventCardProps {
 export function EventCard(props: IEventCardProps){
     let { card } = props;
     
+    const [isFavorite, setFavorite] = useState<Boolean>(false);
     const { addEvent } = useContext(EventContext);
+
+    const { removeEvent, events } = useContext(EventContext);
+    useEffect(() => {
+        if (events.find((event:AnEvent) => event.id === card.id)) {
+            setFavorite(true);
+        }
+    },[])
+
+    console.log(events);
+
+    let button;
+    if (isFavorite){
+        button= <Button className="Starbutton" onClick={() => {
+            removeEvent(card.id);
+            setFavorite(false);
+            }}>
+        <img src={starfillsvg}></img>
+    </Button>;
+    } else {
+        button= <Button className="Starbutton" onClick={() => {
+            addEvent(card);
+            setFavorite(true);
+            }}>
+        <img src={staremptysvg}></img>
+    </Button>;
+    }
 
     return (
         <div className="EventCard">
@@ -27,12 +56,8 @@ export function EventCard(props: IEventCardProps){
             <Button className="ticket" href={card.url}>
               Buy Ticket
             </Button>
-            <Button className="details" href="/eventdetails">Details</Button>
-            <Button onClick={() => addEvent(card)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star" viewBox="0 0 16 16">
-                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-                </svg>
-            </Button>
+            <Button className="details" href={"/eventdetails/"+ card.id}>Details</Button>
+            {button}
         </div>
     )
 }
