@@ -1,4 +1,5 @@
 import { Nav, NavItem, NavLink } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export function Header () {
     return (
@@ -6,16 +7,8 @@ export function Header () {
             <h1>Events Finder</h1>
             <h5>Enjoy your event experience!</h5>
             <Nav>
-            <NavItem>
-                <NavLink href="/eventlist">
-                    Search
-                </NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/bucketlist">
-                    Bucket List
-                </NavLink>
-            </NavItem>
+            <NavItem> <Link className="Search" to="/eventlist">Search</Link></NavItem>
+            <NavItem><Link className="BucketList" to="/bucketlist">Bucket List</Link></NavItem>
             </Nav>
         </div>
     )

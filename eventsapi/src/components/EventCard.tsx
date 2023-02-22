@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Button, CardLink } from "reactstrap";
+import EventContext from "../context/EventContext";
 import { AnEvent } from "../model/Events";
 
 interface IEventCardProps {
@@ -7,6 +9,8 @@ interface IEventCardProps {
 
 export function EventCard(props: IEventCardProps){
     let { card } = props;
+    
+    const { addEvent } = useContext(EventContext);
 
     return (
         <div className="EventCard">
@@ -20,7 +24,7 @@ export function EventCard(props: IEventCardProps){
             <Button href={card.url} className="ticket">
               Buy Ticket
             </Button>
-            <div>
+            <div onClick={() => addEvent(card)}>
                 {card.dates.start.localDate}
             </div>
         </div>

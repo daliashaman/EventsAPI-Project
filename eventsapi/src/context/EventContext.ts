@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { EventContextModel } from "../context/EventContextModel";
 
 const defaultValue:EventContextModel = {
-    event: [],
+    events: [],
     addEvent: () => {},
     removeEvent: () => {}
 }

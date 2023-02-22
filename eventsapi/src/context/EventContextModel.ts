@@ -1,7 +1,7 @@
 import { AnEvent } from "../model/Events";
 
 export interface EventContextModel  {
-    event: Event[],
-    addEvent: (event:Event) => void,
+    events: AnEvent[],
+    addEvent: (event:AnEvent) => void,
     removeEvent: (id: string) => void
 }
