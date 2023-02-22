@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+>>>>>>> f334675405c28a74ba9dbdc907068ed7b6db5fc8
 import { Button, CardLink } from "reactstrap";
 import { AnEvent } from "../model/Events";
 
@@ -18,6 +21,7 @@ export function EventCard(props: IEventCardProps){
             <div>
               {card.name}
             </div>
+<<<<<<< HEAD
             
             <Button className="ticket" href={card.url}>
               Buy Ticket
@@ -25,6 +29,11 @@ export function EventCard(props: IEventCardProps){
             <Button className="bucketbutton" >Add to List</Button>
             <Button className="details">Details</Button>
            
+=======
+            <Button href={card.url} className="ticket">
+              Buy Ticket
+            </Button>
+>>>>>>> f334675405c28a74ba9dbdc907068ed7b6db5fc8
             <div>
                 {card.dates.start.localDate}
             </div>

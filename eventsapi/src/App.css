@@ -43,7 +43,7 @@ border-style: outset;
 border-color: #0066A2;
 height: 50px;
 width: 100px;
-font: bold15px arial,sans-serif;
+font: bold 15px arial,sans-serif;
 text-shadow: none;
   border-radius: 5px;
 }
@@ -63,6 +63,7 @@ text-shadow: none;
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+<<<<<<< HEAD
 }
 
 .bucketbutton {
@@ -71,4 +72,7 @@ margin-left: 10px;
 
 .details {
   margin-left: 10px;
+=======
+  justify-content: center;
+>>>>>>> f334675405c28a74ba9dbdc907068ed7b6db5fc8
 }
