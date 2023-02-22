@@ -5,7 +5,7 @@ export function Header () {
     return (
         <div className="Header">
             <h1>Events Finder</h1>
-            <h5>Enjoy your event experience!</h5>
+            <h5>Enjoy your next event experience!</h5>
             <Nav>
             <NavItem> <Link className="Search" to="/eventlist" 
             style={{textDecorationLine: "none", color: "white", 
