@@ -63,6 +63,7 @@ text-shadow: none;
   display: inline-block;
   text-align: center;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 .bucketbutton {

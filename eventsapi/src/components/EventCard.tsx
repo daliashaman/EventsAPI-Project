@@ -26,18 +26,18 @@ export function EventCard(props: IEventCardProps){
 
     let button;
     if (isFavorite){
-        button= <Button className="Starbutton" onClick={() => {
+        button= <Button className="Starbutton" style={{padding: 2}} onClick={() => {
             removeEvent(card.id);
             setFavorite(false);
             }}>
-        <img src={starfillsvg}></img>
+        <img style={{height: "30px", width: "30px", backgroundColor: "yellow"}} src={starfillsvg}></img>
     </Button>;
     } else {
-        button= <Button className="Starbutton" onClick={() => {
+        button= <Button className="Starbutton" style={{padding: 2}} onClick={() => {
             addEvent(card);
             setFavorite(true);
             }}>
-        <img src={staremptysvg}></img>
+        <img style={{height: "30px", width: "30px"}} src={staremptysvg}></img>
     </Button>;
     }
 
