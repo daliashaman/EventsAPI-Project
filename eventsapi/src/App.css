@@ -10,9 +10,8 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
-  box-shadow: 3em black;
-  background: radial-gradient(circle at 10% 20%, rgb(90, 92, 106) 0%, rgb(32, 45, 58) 81.3%);}
+  border-bottom: 4px solid rgb(90, 88, 88);
+  background: radial-gradient(circle at 10% 20%, rgb(136, 142, 191) 0%, rgb(56, 117, 178) 81.3%);}
 
 li {
   list-style-type: none;
@@ -30,10 +29,13 @@ li {
 
 .Homepage {
   font-family: 'Roboto Condensed', sans-serif;
+  background-color: whitesmoke;
+  width: 100vw;
 }
 
 label {
   padding: 20px;
+
 }
 
 .submit {
@@ -54,11 +56,12 @@ text-shadow: none;
 }
 
 .submit:hover {
-  background-color: green;
+  background-color: rgb(50, 132, 232);
 }
 
 .EventCard {
   border: 1px solid black;
+  box-shadow: 5px 5px grey;
   border-radius: 5px;
   display: inline-block;
   text-align: center;
@@ -71,7 +74,7 @@ margin-left: 10px;
 }
 
 .details {
-  margin-left: 10px;
+  margin-left: 15px;
   margin-right: 10px;
 }
 

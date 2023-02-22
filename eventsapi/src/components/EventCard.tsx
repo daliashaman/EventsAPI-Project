@@ -45,7 +45,7 @@ export function EventCard(props: IEventCardProps){
         <div className="EventCard">
 
             <div>
-               <img src= {card.images[0].url} alt="" style={{height: "200px", width: "300px"}}/>
+               <img className= "image" src= {card.images[0].url} alt="Event image" style={{height: "200px", width: "300px"}}/>
             </div>
             <div>
               {card.name}
@@ -53,7 +53,7 @@ export function EventCard(props: IEventCardProps){
             <div>
                 {card.dates.start.localDate}
             </div>
-            <Button className="ticket" href={card.url}>
+            <Button className="ticket" href={card.url} style={{backgroundColor: "green"}}>
               Buy Ticket
             </Button>
             <Button className="details" href={"/eventdetails/"+ card.id}>Details</Button>

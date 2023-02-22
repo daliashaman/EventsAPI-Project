@@ -41,7 +41,7 @@ export function SearchForm(props: ISearchFormProps) {
                   
                 <label>
                      Date:
-                 <input type="date" name="startDate" value={startEndDateTime}
+                 <input type="date" name="startEndDate" value={startEndDateTime}
                 onChange={(e) => setStartEndDateTime(e.target.value)} />
                 </label>
                   
