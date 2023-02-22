@@ -53,5 +53,8 @@ text-shadow: none;
   flex-direction: row;
 }
 
+.submit:hover {
+  background-color: green;
+}
 
 

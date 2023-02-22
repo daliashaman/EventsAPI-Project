@@ -1,3 +1,4 @@
+import { CardLink } from "reactstrap";
 import { AnEvent } from "../model/Events";
 
 interface IEventCardProps {
@@ -11,21 +12,17 @@ export function EventCard(props: IEventCardProps){
         <div className="EventCard">
 
             <div>
-               <img src= {card.images[0].url} alt="" />
+               <img src= {card.images[0].url} alt="" style={{height: "200px", width: "300px"}}/>
             </div>
             <div>
               {card.name};
             </div>
-            <div>
-              {card.locale};  
-            </div>
-            <div>
-              {card.url};  
-            </div>
+            <CardLink href={card.url}>
+              Buy Ticket
+            </CardLink>
             <div>
                 {card.dates.start.localDate};
             </div>
-
         </div>
     )
 }
