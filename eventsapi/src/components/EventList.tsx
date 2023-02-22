@@ -32,7 +32,7 @@ export function EventList() {
         <EventCard key={card.id} card={ card} />
       </Col>
       )) || ""
-    : <Col tag="h1">No events found for your search terms, please try again</Col>
+    : <Col tag="h1">No events found.</Col>
     }
         </Row>
       </div>
