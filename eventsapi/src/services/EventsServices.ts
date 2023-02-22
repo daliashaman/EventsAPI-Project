@@ -11,11 +11,9 @@ import { AnEvent } from '../model/Events';
 //     .then((response:any) => response.data._embedded.events);
 // }
 
-export function GetAllEvents(keyword?: string, postalCode?: string, startEndDateTime?: string) {
-
-    return axios.get<AnEvent[]>(`https://app.ticketmaster.com/discovery/v2/events.json`, {params:{apikey:'MlsyU0dIeOhOWoaOEVqX3xT9QKxuvX40', keyword, postalCode, startEndDateTime }})
-
-    .then((response:any) => response.data._embedded.events);
+export function GetAllEvents(keyword?: string, postalCode?: string, startDateTime?: string, endDateTime?: string) {
+  return axios.get<AnEvent[]>(`https://app.ticketmaster.com/discovery/v2/events.json`, {params:{apikey:'MlsyU0dIeOhOWoaOEVqX3xT9QKxuvX40', keyword, postalCode, startDateTime, endDateTime}})
+  .then((response:any) => response.data._embedded.events);
 }
 
 export function GetEventById(id: string) {
