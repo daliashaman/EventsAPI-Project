@@ -21,9 +21,13 @@ export function EventCard(props: IEventCardProps){
             <div>
               {card.name}
             </div>
-            <Button href={card.url} className="ticket">
+            
+            <Button className="ticket" href={card.url}>
               Buy Ticket
             </Button>
+            <Button className="bucketbutton" >Add to List</Button>
+            <Button className="details" href="/eventdetails">Details</Button>
+           
             <div>
                 {card.dates.start.localDate}
             </div>

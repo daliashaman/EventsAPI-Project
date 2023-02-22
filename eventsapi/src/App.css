@@ -63,7 +63,14 @@ text-shadow: none;
   display: inline-block;
   text-align: center;
   margin-top: 10px;
-  justify-content: center;
+}
+
+.bucketbutton {
+margin-left: 10px;
+}
+
+.details {
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 768px) {
