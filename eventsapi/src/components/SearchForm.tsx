@@ -26,7 +26,6 @@ export function SearchForm(props: ISearchFormProps) {
 
     return (
         <div className="Homepage">
-            <Header />
             <form className="form-container" onSubmit={onSubmit}>
                  <label>
                      Keyword:    

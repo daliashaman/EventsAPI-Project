@@ -10,6 +10,7 @@ const EventContextProvider = ({children}: IEventContextProviderProps) => {
     const [events, setEvents] = useState<AnEvent[]>([]);
 
     const addEvent = (event:AnEvent) => {
+        console.log(event);
         setEvents([...events, event]);
     }
 
@@ -17,14 +18,15 @@ const EventContextProvider = ({children}: IEventContextProviderProps) => {
         setEvents(events.filter((x) => x.id !== id));
     }
   
-    // idk why i'm having issues with this!
-    // return (
-    //     <EventContext.Provider value={{
-    //         event: events,
-    //         addEvent: addEvent,
-    //         removeEvent: removeEvent
-    //     }}>{children}</EventContext.Provider>;
-    // )
+    
+    return (<EventContext.Provider value={{
+        events: events,
+        addEvent: addEvent,
+        removeEvent: removeEvent
+    }}>{children}</EventContext.Provider>);
 };
 
+
 export default EventContextProvider
+
+
