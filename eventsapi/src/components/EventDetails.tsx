@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardLink, CardText, Row, Col } from 'reactstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { GetAllEvents} from '../services/EventsServices';
 import {AnEvent} from "../model/Events";
 
@@ -30,7 +30,7 @@ export function EventDetails () {
                   <img
                     src={detailsRoute.images[0].url}
                     alt="Event"
-                    style={{ height: "200px" }}
+                    style={{ height: "300px", width: "200px" }}
                   />
                 )}
                 <CardBody>
@@ -44,7 +44,7 @@ export function EventDetails () {
                   <CardText>{detailsRoute?._embedded?.venues[0]?.name}</CardText>
                   </CardBody>
                   <p><b>Genre: </b>{detailsRoute?.classifications[0]?.genre.name}</p>
-                  <p><b>Address: </b>{detailsRoute?._embedded?.venues[0]?.address?.line1} </p>
+                  <p><b>Venue: </b>{detailsRoute?._embedded?.venues[0]?.address?.line1} </p>
                   <p><b>City: </b>{detailsRoute?._embedded?.venues[0]?.city.name}</p>
                   <p><b>State: </b>{detailsRoute?._embedded?.venues[0]?.state.name}</p>
                   <p><b>Postal Code: </b>{detailsRoute?._embedded?.venues[0]?.postalCode}</p>
