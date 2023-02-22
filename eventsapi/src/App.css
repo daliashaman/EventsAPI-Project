@@ -63,7 +63,6 @@ text-shadow: none;
   display: inline-block;
   text-align: center;
   margin-top: 10px;
-<<<<<<< HEAD
 }
 
 .bucketbutton {
@@ -72,7 +71,4 @@ margin-left: 10px;
 
 .details {
   margin-left: 10px;
-=======
-  justify-content: center;
->>>>>>> f334675405c28a74ba9dbdc907068ed7b6db5fc8
 }
