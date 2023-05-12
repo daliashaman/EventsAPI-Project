@@ -1,76 +1,84 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Header section */
 .Header {
-  padding: 20px;
-  color: white;
-  flex-direction: row;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(136, 142, 191) 0%,
+    rgb(56, 117, 178) 81.3%
+  );
   border-bottom: 4px solid rgb(90, 88, 88);
-  background: radial-gradient(circle at 10% 20%, rgb(136, 142, 191) 0%, rgb(56, 117, 178) 81.3%);}
+  color: white;
+}
 
+/* Navigation links */
 li {
   list-style-type: none;
-  flex-direction: row;
   display: inline-block;
   padding: 5px;
 }
 
+.Search,
+.BucketList {
+  font-size: 1.5rem;
+}
+
+/* Form container */
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-}
-
-.Homepage {
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: whitesmoke;
-  width: 100vw;
+  font-size: 1.5rem;
 }
 
 label {
   padding: 20px;
-
 }
 
 .submit {
-background: #0066A2;
-color: white;
-border-style: outset;
-border-color: #0066A2;
-height: 50px;
-width: 100px;
-font: bold 15px arial,sans-serif;
-text-shadow: none;
+  background: #0066a2;
+  color: white;
+  border: none;
+  height: 50px;
+  width: 100px;
+  font: bold 15px arial, sans-serif;
   border-radius: 5px;
-}
-
-.Event {
-  display: inline-block;
-  flex-direction: row;
+  text-shadow: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .submit:hover {
   background-color: rgb(50, 132, 232);
 }
 
+/* EventCard and EventDetail section */
+.Event {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .EventCard {
   border: 1px solid black;
   box-shadow: 5px 5px grey;
   border-radius: 5px;
-  display: inline-block;
   text-align: center;
-  margin-top: 15px;
+  margin: 15px;
   padding-bottom: 10px;
 }
 
 .bucketbutton {
-margin-left: 10px;
+  margin-left: 10px;
 }
 
 .details {
@@ -78,5 +86,9 @@ margin-left: 10px;
   margin-right: 10px;
 }
 
+/* Responsive styles */
 @media screen and (min-width: 768px) {
+  .Header {
+    padding: 20px 50px;
+  }
 }
