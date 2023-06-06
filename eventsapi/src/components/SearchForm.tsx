@@ -37,7 +37,9 @@ export function SearchForm(props: ISearchFormProps) {
                     <label>
                      Postal Code:
                  <input type="text" name="postalCode"  placeholder="Enter postal code" value={postalCode}
-                onChange={(e) => setPostalCode(e.target.value.replace(/[^\d{5}]$/, "").substr(0, 5))} />
+                onChange={(e) => setPostalCode( e.target.value.replace(/^(\d{0,5}([- ]?\d{0,4})?|[A-Za-z]\d[A-Za-z]([- ]?\d[A-Za-z]\d)?).{0,7}$/,
+                (match) => match.slice(0, 7)
+                  ))} />
                 </label>
                   
                 <label>
